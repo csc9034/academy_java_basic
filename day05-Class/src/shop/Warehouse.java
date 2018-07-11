@@ -101,36 +101,36 @@ public class Warehouse {
 	 * @param product
 	 */
 	public void remove(Product product) {
-		// 폐기할 제품이 위치하는 인덱스
-		int rmIndex = -1;
-		rmIndex = findProductIdx(product);
-		
-		// 삭제 안된 제품을 유지할 새 배열
-		Product[] newProducts;
-		
-		if (rmIndex > -1) {
-			newProducts = new Product[this.products.length - 1];
-			// 1. rmIndex 배열 중간 일 때
-			if (rmIndex > (products.length - 1)) {
-				// 삭제할 제품 앞쪽까지 복사
-				for (int idx = 0; idx < rmIndex; idx++) {
-					newProducts[idx] = products[idx];
-				}
-				
-				// 삭제 할 제품 뒷쪽부터 끝까지 복사
-				for (int idx = rmIndex; idx < newProducts.length; idx++) {
-					newProducts[idx] = products[idx + 1];
-				}
+	      // 폐기할 제품이 위치하는 인덱스
+	      int rmIndex = -1;
+	      rmIndex = findProductIdx(product);
 
-			} else {
-			// 2. rmIndex 마지막 일 때
-				for (int idx = 0; idx < products.length - 1; idx++) {
-					newProducts[idx] = products[idx];
-				}
-			}
-			
-		}
-	}
+	      // 삭제 안된 제품을 유지할 새 배열
+	      Product[] newProducts;
+
+	      if (rmIndex > -1) {
+	         newProducts = new Product[this.products.length - 1];
+	         // 1. rmIndex 가 배열 중간일 때
+	         if (rmIndex < (products.length - 1)) {
+	            // 삭제할 제품 앞쪽까지 복사
+	            for (int idx = 0; idx < rmIndex; idx++) {
+	               newProducts[idx] = products[idx];
+	            }
+	            // 삭제할 제품 뒷쪽부터 끝까지 복사
+	            for (int idx = rmIndex; idx < newProducts.length; idx++) {
+	               newProducts[idx] = products[idx + 1];
+	            }
+	            
+	         } else {
+	            // 2. rmIndex 가 배열 마지막일 때
+	            for (int idx = 0; idx < products.length - 1; idx++) {
+	               newProducts[idx] = products[idx];
+	            }
+	         }
+	         this.products = newProducts;
+	      }
+	      
+	   }
 	
 	/**
 	 * 배열(선반)에 들어있는 제품들 전체 정보를 가져와서
@@ -157,7 +157,7 @@ public class Warehouse {
 				break;
 			}
 		}
-		return null;
+		return found;
 	}
 	
 	/**
