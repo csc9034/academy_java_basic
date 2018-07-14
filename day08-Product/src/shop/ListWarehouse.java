@@ -11,7 +11,7 @@ import java.util.List;
 public class ListWarehouse implements GeneralWarehouse {
 	
 	// 1. 멤버 변수 선언부
-	private List<Product> products;
+	private List<Product> products = new ArrayList<Product>();
 	
 	// 2. 생성자 선언부
 	// (1) 기본 생성자
@@ -53,7 +53,7 @@ public class ListWarehouse implements GeneralWarehouse {
 			found = products.get(getIndex);
 		} 
 		
-		return products.get(getIndex);
+		return found;
 	}
 
 	@Override
