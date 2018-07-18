@@ -1,6 +1,7 @@
 package shop.test;
 
 import shop.controller.Manager;
+
 import shop.dao.GeneralWarehouse;
 import shop.vo.Product;
 
