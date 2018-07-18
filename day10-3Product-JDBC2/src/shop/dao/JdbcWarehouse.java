@@ -20,7 +20,7 @@ import static java.sql.DriverManager.getConnection;
  * --------------------------------------------------------
  * 중복되는 드라이버 로드 / 자원 해제 등의 코드를 정리 
  * 
- * @author PC38206
+ * @author CHO
  *
  */
 public class JdbcWarehouse implements GeneralWarehouse {

@@ -15,7 +15,7 @@ import shop.vo.Product;
 /**
  * 제품 정보를 JDBC 를 통하여 오라클 데이터베이스의 PRODUCT 테이블로 저장하는 클래스
  * 
- * @author PC38206
+ * @author CHO
  *
  */
 public class JdbcWarehouse implements GeneralWarehouse {
