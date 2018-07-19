@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- 외부 DTD 선언 : 범용 : PUBLIC -->
+<!DOCTYPE academy PUBLIC "-//academy//version1//KR" "academy.dtd">
+
+<!-- XML 선언 -->
+<academy>
+	<subject>SQL</subject>
+	<subject>XML</subject>
+	<subject>Java</subject>
+</academy>
