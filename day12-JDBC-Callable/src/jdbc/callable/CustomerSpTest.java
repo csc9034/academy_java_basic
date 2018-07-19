@@ -64,7 +64,9 @@ public class CustomerSpTest {
 			e.printStackTrace();
 		
 		} finally {
+			
 			try {
+				
 				if (cstmt != null) {
 					// 6. 자원 해제
 					cstmt.close();
