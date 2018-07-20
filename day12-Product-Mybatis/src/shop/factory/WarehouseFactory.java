@@ -12,6 +12,7 @@ import shop.dao.GeneralWarehouse;
 import shop.dao.JdbcWarehouse;
 import shop.dao.ListWarehouse;
 import shop.dao.MapWarehouse;
+import shop.dao.MybatisWarehouse;
 import shop.dao.SetWarehouse;
 import shop.vo.Product;
 
@@ -46,7 +47,7 @@ public class WarehouseFactory {
 			warehouse = new JdbcWarehouse();
 	
 		} else if ("mybatis".equals(type)) {
-			warehouse = new MapWarehouse();
+			warehouse = new MybatisWarehouse();
 		}
 
 		return warehouse;
