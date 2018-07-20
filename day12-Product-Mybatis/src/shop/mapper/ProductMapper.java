@@ -24,7 +24,7 @@ public interface ProductMapper {
 	 * @param empno : 조회 할 직원 사번
 	 * @return      : 직원 1명의 상세 정보
 	 */
-	public abstract Product select(int prodCode);
+	public abstract Product selectOne(Product product);
 	
 	/**
 	 * 제품의 정보 1건을 insert

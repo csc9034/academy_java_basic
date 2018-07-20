@@ -16,36 +16,39 @@ import shop.dao.SetWarehouse;
 import shop.vo.Product;
 
 /**
- * 창고 객체(GeneralWarehouse 타입) 생성을
- * 전문적으로 수행하는 팩토리 클래스
+ * 창고 객체(GeneralWarehouse 타입) 생성을 전문적으로 수행하는 팩토리 클래스
+ * 
  * @author CHO
  *
  */
 public class WarehouseFactory {
-	
+
 	public static GeneralWarehouse getWarehouse(String type) {
 		GeneralWarehouse warehouse = null;
-		
-		if("array".equals(type)) {
+
+		if ("array".equals(type)) {
 			Product[] products = new Product[0];
 			warehouse = new ArrayWarehouse(products);
-			
+
 		} else if ("list".equals(type)) {
 			List<Product> products = new ArrayList<>();
 			warehouse = new ListWarehouse(products);
-		
+
 		} else if ("set".equals(type)) {
 			Set<Product> products = new HashSet<>();
 			warehouse = new SetWarehouse(products);
-			
+
 		} else if ("map".equals(type)) {
 			Map<String, Product> products = new HashMap<>();
 			warehouse = new MapWarehouse(products);
-			
+
 		} else if ("jdbc".equals(type)) {
 			warehouse = new JdbcWarehouse();
+	
+		} else if ("mybatis".equals(type)) {
+			warehouse = new MapWarehouse();
 		}
-		
+
 		return warehouse;
 	}
 

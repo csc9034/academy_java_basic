@@ -15,7 +15,7 @@
 	      FROM product p
 	</select>
 	
-	<select id="selectOne" parameterType="int" resultType="Product">
+	<select id="selectOne" parameterType="Product" resultType="Product">
 		SELECT p.prodcode
 		     , p.prodname
 			 , p.price   
@@ -28,8 +28,8 @@
 	</select>
 	
 	<insert id="insert" parameterType="Product">
-			INSERT INTO product(prodcode, prodname, price, quantity)"
-		    VALUES (#{prodCode}, #{prodName}, #{price}, #{quantity})";
+			INSERT INTO product(prodcode, prodname, price, quantity)
+		    VALUES (#{prodCode}, #{prodName}, #{price}, #{quantity})
 	</insert>
 	
 	<update id="update" parameterType="Product">

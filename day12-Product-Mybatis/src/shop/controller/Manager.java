@@ -81,7 +81,14 @@ public class Manager {
 			reply = getReply("error");
 			e.printStackTrace();
 			
-		} finally {
+		} catch (Exception e) {
+			message = String.format("예외 발생:%s", e.getMessage());
+			
+			reply = getReply("error");
+			e.printStackTrace();
+		}
+		
+		finally {
 			// 제품 추가시 예외가 발생 해도, 안해도
 			// 제품 추가에 대한 메시지가 출력되어야 하므로
 			// finally 블록에 작성
