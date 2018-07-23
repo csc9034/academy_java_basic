@@ -54,6 +54,17 @@ BEGIN
 END SP_INSERT_CUSTOMER;
 /
 
+		SELECT b.bookid 
+			 , b.title
+			 , b.author
+			 , b.price
+			 , b.isbn
+			 , b.publish 
+	      FROM book b 
+		 WHERE b.title LIKE '%곰돌이%';
+     
+     		SELECT COUNT(b.bookid)
+	      FROM book b ;
 
 
 
