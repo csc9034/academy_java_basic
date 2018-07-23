@@ -61,7 +61,7 @@ public class BookStore {
 		
 		bookmanager.select(10000, 12000);
 		bookmanager.select("곰돌이");
-		bookmanager.selectTotalCnt();;
+		bookmanager.selectTotalCnt();
 
 		bookmanager.delete(b001);
 		bookmanager.delete(b002);

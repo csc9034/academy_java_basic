@@ -100,7 +100,7 @@
 			 , b.isbn
 			 , b.publish 
 	      FROM book b 
-		 WHERE b.title LIKE '%#{keyword}%'
+		 WHERE b.title LIKE '%' || #{keyword} || '%'
  	</select>
 
  	<select id="selectTotalCnt" resultType="int">

@@ -1,5 +1,6 @@
 package book.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import book.dao.BookShelf;
@@ -169,7 +170,7 @@ public class BookManager {
 	
 	public void select(String keyword) {
 		
-		List<Book> books = null;
+		List<Book> books = new ArrayList<>();
 		
 		try {
 			books = bookshelf.select(keyword);
@@ -177,7 +178,6 @@ public class BookManager {
 			view = new ListView();
 			
 		} finally {
-			
 			view.display(books);
 		}
 	}
@@ -185,11 +185,12 @@ public class BookManager {
 	
 	
 	public void selectTotalCnt() {
+		
+		view = new MessageView();
+	
 		int cnt = bookshelf.totalCount();
-		String msg;
-		msg = String.format("%n 건 입니다.", cnt);
 
-		view.display(msg);
+		view.display("현재 책의 개수는 " + cnt + "개 입니다." );
 	}
 
 	
